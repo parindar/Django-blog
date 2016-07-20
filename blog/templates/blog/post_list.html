@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	  <title>Parinda's Blog</title>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	</head>
 
-    <body>
-       <div class="well">
-  		<h1> <b> <a href="http://parinda.pythonanywhere.com/"> Parinda's Blog </a> </b>  </h1> 
- 		<h3> <p>Miscellaneous</p> </h3>
-	</div>
+{% extends 'blog/base.html' %}
 
-	<div class="container">
+{% block content %}
   
-		{% for post in posts %}
+	{% for post in posts %}
 	   
-		<div class="well well-sm text-primary"> <h2>{{ post.title }}</h2> 
-		{{ post.published_date }} 
-		</div>
-		<div class="panel panel-default">
-  			<div class="panel-body"><p>{{ post.text|linebreaksbr }}</p></div>
-		</div>
-	    
-	{% endfor %}
-
+	<div class="well well-sm text-primary"> <h2>{{ post.title }}</h2> 
+	<div class= "date"> {{ post.published_date }} </div> 
 	</div>
-    </body>
-</html>
+	<div class="panel panel-default">
+  		<div class="panel-body"><p>{{ post.text|linebreaksbr }}</p></div>
+	</div>
+	    
+       {% endfor %}
+{% endblock %}
+
+	
+
