@@ -6,3 +6,7 @@ h1 b a {
 .date {
     color: #000000;
 }
+
+.bottom-space-10 {
+    margin-bottom:10px; 
+}

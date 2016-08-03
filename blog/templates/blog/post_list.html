@@ -4,15 +4,25 @@
 {% block content %}
   
 	{% for post in posts %}
-	   
-	<div class="well well-sm text-primary"> <h2>{{ post.title }}</h2> 
-	<div class= "date"> {{ post.published_date }} </div> 
-	</div>
-	<div class="panel panel-default">
-  		<div class="panel-body"><p>{{ post.text|safe|linebreaksbr }}</p></div>
-	</div>
-	    
-       {% endfor %}
+	   </br>
+		<div class="well well-sm text-primary"> <h2>{{ post.title }}</h2> 
+		<div class= "date"> {{ post.published_date }} </div> 
+		</div>
+		<div class="panel panel-default">
+	  		<div class="panel-body"><p>{{ post.text|safe|linebreaksbr }}</p></div>
+		</div>
+
+		<div class="bottom-space-10">
+
+		{% for tag in post.tag_set.all %}
+
+			<span class="label label-success">{{tag.name}}</span>
+
+	    {% endfor %}
+
+	    </div>
+
+    {% endfor %}
 {% endblock %}
 
 	

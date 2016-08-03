@@ -1,8 +1,11 @@
 from django.db import models
 from django.utils import timezone
+import json
 
 
 class Post(models.Model):
+
+    post_id = models.AutoField(primary_key=True)
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -17,3 +20,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Tag(models.Model):
+
+    tag_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=200)
+    post = models.ManyToManyField(Post)
+
+    def __str__(self):             
+        return self.name
+
