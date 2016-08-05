@@ -14,11 +14,20 @@
 
 		<div class="bottom-space-10 ">
 
-		{% for tag in post.tag_set.all %}
+			<div class="row">
 
-			<span class="label label-success ">{{tag.name}}</span>
+				<div class="col-sm-1"> 
+					<span class="glyphicon glyphicon-tags"></span>
+					Tags </div>
 
-	    {% endfor %}
+				<div class="col-sm-11">
+					{% for tag in post.tag_set.all %}
+
+						<span class="label label-success ">{{tag.name}}</span>
+
+				    {% endfor %}
+				</div>
+		    </div>
 
 	    </div>
 
