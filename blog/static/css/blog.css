@@ -10,3 +10,15 @@ h1 b a {
 .bottom-space-10 {
     margin-bottom:10px; 
 }
+
+.margin-left-20{
+	margin-left: 50px;
+}
+
+.margin-bottom-minus{
+	margin-bottom: -10px;
+}
+
+.margin-left-80{
+	margin-left: 80px;
+}
